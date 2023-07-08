@@ -54,7 +54,7 @@ customPopulationFetch.onclick = async () => {
     const getStartDate = document.querySelector('#customPopulationStartYear').value
     const getEndDate = document.querySelector('#customPopulationEndYear').value
 
-    const request = await fetch(`http://api.worldbank.org/v2/country/${getSelectedCountry}/indicator/SP.POP.TOTL?date=${getStartDate}:${getEndDate}&format=json`)
+    const request = await fetch(`https://api.worldbank.org/v2/country/${getSelectedCountry}/indicator/SP.POP.TOTL?date=${getStartDate}:${getEndDate}&format=json`)
     if(!request.ok) {
         alert('Error fetching data')
         hideLoadingSpinner()
@@ -156,7 +156,7 @@ Highcharts.chart('populationByRegionChart', {
 const fetchPopulationByRegion = async () => {
     showLoadingSpinner()
 
-    const request = await fetch('http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2022&format=json&per_page=1000')
+    const request = await fetch('https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2022&format=json&per_page=1000')
 
     if(!request.ok) {
         alert('Error fetching data')
@@ -228,7 +228,7 @@ comparePopulationBtn.onclick = async () => {
     const getFirstCountry = document.querySelector('#compareCountrySelect1').value
     const getSecondCountry = document.querySelector('#compareCountrySelect2').value
 
-    const request = await fetch(`http://api.worldbank.org/v2/country/${getFirstCountry};${getSecondCountry}/indicator/SP.POP.TOTL?date=2022&format=json`)
+    const request = await fetch(`https://api.worldbank.org/v2/country/${getFirstCountry};${getSecondCountry}/indicator/SP.POP.TOTL?date=2022&format=json`)
     if(!request.ok) {
         alert('Error fetching data')
         hideLoadingSpinner()
@@ -257,7 +257,7 @@ comparePopulationBtn.onclick = async () => {
 // function used to create the select options for the countries
 const getData = async () => {
 
-    const request = await fetch('http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2019&format=json&per_page=1000')
+    const request = await fetch('https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2019&format=json&per_page=1000')
 
     if(!request.ok) {
         alert('Error fetching data')
